@@ -9,8 +9,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primaryRed: "#A61200",
+        primaryBrown: "#764640 ",
+        primaryBeige: "#ffe5b6",
+        secondaryBeige: "#f9e4c9",
+      },
+      keyframes: {
+        rotateGradient: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        spin: {
+          from: { transform: "rotate(45deg)" },
+          to: { transform: "rotate(405deg)" },
+        },
       },
     },
   },
