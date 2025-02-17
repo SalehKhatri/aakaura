@@ -4,6 +4,8 @@ import Heading from "@/components/ui/Heading";
 import fonts from "@/config/fonts";
 import { getAllBlogs } from "@/lib/api";
 import { Metadata } from "next";
+export const dynamic = "force-dynamic";
+
 
 export const metadata: Metadata = {
   title: "Blogs | Aakaura",

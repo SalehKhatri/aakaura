@@ -8,6 +8,8 @@ import { Blog } from "@/types/Blog";
 import { getAllBlogs } from "@/lib/api";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+export const dynamic = "force-dynamic";
+
 
 export const metadata: Metadata = {
   title: "Admin | Aakaura",

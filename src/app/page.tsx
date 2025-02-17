@@ -6,6 +6,7 @@ import { chakras } from "@/config/constants";
 import env from "@/config/env";
 import { ApiResponse } from "@/types/Api";
 import { Blog } from "@/types/Blog";
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Home | Aakura",

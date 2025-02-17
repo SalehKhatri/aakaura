@@ -5,6 +5,8 @@ import Link from "next/link";
 import MarkdownRenderer from "@/components/ui/MarkdownRenderer";
 import { getBlogById } from "@/lib/api";
 import { Metadata } from "next";
+export const dynamic = "force-dynamic";
+
 
 export const metadata: Metadata = {
   title: "Blog | Aakaura",
