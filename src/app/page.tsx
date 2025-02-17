@@ -9,8 +9,8 @@ import { Blog } from "@/types/Blog";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Home | Aakura",
-  description: "Aakura is a platform for spiritual growth and self-improvement",
+  title: "Home | Aakaura",
+  description: "Aakaura is a platform for spiritual growth and self-improvement",
 };
 
 const getFeaturedBlogs = async () => {
