@@ -7,6 +7,12 @@ import { BiCalendarAlt } from "react-icons/bi";
 import { Blog } from "@/types/Blog";
 import { getAllBlogs } from "@/lib/api";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Admin | Aakaura",
+  description: "Manage your blog posts and content.",
+};
 
 export default async function Admin() {
   const blogs = await getAllBlogs();

@@ -3,8 +3,12 @@ import Container from "@/components/ui/Container";
 import Heading from "@/components/ui/Heading";
 import fonts from "@/config/fonts";
 import { getAllBlogs } from "@/lib/api";
+import { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+  title: "Blogs | Aakaura",
+  description: "Read our latest blogs.",
+};
 
 export default async function Blogs() {
   const blogs = await getAllBlogs();

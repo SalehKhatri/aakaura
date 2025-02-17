@@ -1,14 +1,21 @@
 import BlogForm from "@/components/ui/BlogForm";
 import { getBlogById } from "@/lib/api";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-interface EditBlogPageProps {
-  params: { id: string };
-}
+export const metadata: Metadata = {
+  title: "Edit Blog | Aakaura",
+  description: "Edit a blog.",
+};
 
-export default async function EditBlogPage({ params }: EditBlogPageProps) {
-  const { id } = await params;
+export default async function EditBlogPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const id = (await params).id;
   const blog = await getBlogById(id);
+
   if (!blog) {
     return notFound();
   }

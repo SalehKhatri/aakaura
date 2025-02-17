@@ -3,9 +3,9 @@ import { ApiError, errorHandler } from "@/middleware/errorHandler";
 import { successResponse } from "@/utils/response";
 
 export const GET = errorHandler(
-  async (req: Request, { params }: { params: { id: string } }) => {
+  async (req: Request, { params }: { params: Promise<{ id: string }> }) => {
     try {
-      const { id } = await params;
+      const id = (await params).id;
       if (!id) throw new ApiError("Blog ID is required", 400);
 
       const blog = await prisma.blog.findUnique({ where: { id } });

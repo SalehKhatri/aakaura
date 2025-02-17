@@ -1,6 +1,6 @@
 export const successResponse = (
   message = "Success",
-  data: any,
+  data: unknown,
   status = 200,
   headers: HeadersInit = {}
 ) => {

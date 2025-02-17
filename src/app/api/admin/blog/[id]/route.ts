@@ -6,9 +6,9 @@ import { uploadToCloudinary } from "@/utils/upload";
 import { console } from "inspector";
 
 export const PATCH = errorHandler(
-  async (req: Request, { params }: { params: { id: string } }) => {
+  async (req: Request, { params }: { params: Promise<{ id: string }> }) => {
     try {
-      const { id } = await params;
+      const id = (await params).id;
       if (!id) throw new ApiError("Blog ID is required", 400);
 
       const formData = await req.formData();
@@ -46,9 +46,9 @@ export const PATCH = errorHandler(
 );
 
 export const DELETE = errorHandler(
-  async (req: Request, { params }: { params: { id: string } }) => {
+  async (req: Request, { params }: { params: Promise<{ id: string }> }) => {
     try {
-      const { id } = await params;
+      const id = (await params).id;
       if (!id) {
         throw new ApiError("Blog ID is required", 400);
       }
