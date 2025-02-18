@@ -10,7 +10,8 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Home | Aakaura",
-  description: "Aakaura is a platform for spiritual growth and self-improvement",
+  description:
+    "Aakaura is a platform for spiritual growth and self-improvement",
 };
 
 const getFeaturedBlogs = async () => {

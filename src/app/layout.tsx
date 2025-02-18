@@ -4,6 +4,7 @@ import "./globals.css";
 import { SplashScreenProvider } from "@/context/SplashScreenProvider";
 import { usePathname } from "next/navigation";
 import { Toaster } from "react-hot-toast";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -18,7 +19,8 @@ export default function RootLayout({
         <Toaster />
         <SplashScreenProvider>
           {!isAdminRoute && <Navbar />}
-          <main className={`${!isAdminRoute && "pt-24"}`}>{children}</main>
+          <main className={`${!isAdminRoute && "pt-20"}`}>{children}</main>
+          {!isAdminRoute && <Footer />}
         </SplashScreenProvider>
       </body>
     </html>

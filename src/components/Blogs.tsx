@@ -22,7 +22,7 @@ export default function Blogs({ title = "Our Thoughts", blogs }: BlogsProps) {
     setIsClient(true);
   }, []);
   return (
-    <section>
+    <section className="py-6">
       <Container>
         {/* Section Title */}
         <div className="text-center mb-6 md:mb-8">
@@ -58,9 +58,7 @@ export default function Blogs({ title = "Our Thoughts", blogs }: BlogsProps) {
           >
             {blogs.map((blog) => (
               <SwiperSlide key={blog.id}>
-                <BlogCard
-                  blog={blog}
-                />
+                <BlogCard blog={blog} />
               </SwiperSlide>
             ))}
           </Swiper>

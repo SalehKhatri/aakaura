@@ -1,4 +1,11 @@
-import { Dekko, Special_Elite, Playfair_Display, Merriweather, Mulish } from "next/font/google";
+import {
+  Dekko,
+  Special_Elite,
+  Playfair_Display,
+  Merriweather,
+  Mulish,
+  Patrick_Hand,
+} from "next/font/google";
 
 const playfair = Playfair_Display({ subsets: ["latin"] });
 const dekko = Dekko({
@@ -25,7 +32,11 @@ const specialElite = Special_Elite({
   variable: "--font-special-elite",
 });
 
-
+const patrickHand = Patrick_Hand({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-patrickHan",
+});
 
 const fonts = {
   dekko: dekko.className,
@@ -33,7 +44,7 @@ const fonts = {
   playfair: playfair.className,
   merriweather: merriweather.className,
   mulish: mulish.className,
+  patrickHand: patrickHand.className,
 };
-
 
 export default fonts;

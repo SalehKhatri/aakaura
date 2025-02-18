@@ -124,12 +124,8 @@ export default function Navbar() {
 
   const navItems = [
     {
-      title: "Hello",
+      title: "Hi",
       submenuItems: [{ name: "Know us :)", href: "/about" }],
-    },
-    {
-      title: "Aakaura",
-      submenuItems: [{ name: "Our Products", href: "/products" }],
     },
     {
       title: "Read On",
@@ -144,10 +140,25 @@ export default function Navbar() {
       <div className="flex items-center justify-center h-20">
         {/* Desktop Navigation */}
         <div className="hidden md:flex w-full items-center justify-center">
-          <div className="w-full max-w-2xl flex justify-between">
-            {navItems.map((item) => (
-              <NavItem key={item.title} {...item} />
-            ))}
+          <div className="w-full max-w-2xl flex justify-between items-center">
+            <NavItem
+              title="Hi"
+              submenuItems={[{ name: "Know us :)", href: "/about" }]}
+            />
+            <Link href="/" className="flex justify-center items-center">
+              <Image
+                quality={100}
+                priority
+                src={"/logo.png"}
+                alt="Aakaura"
+                width={200}
+                height={100}
+              />
+            </Link>
+            <NavItem
+              title="Read On"
+              submenuItems={[{ name: "Our Thoughts", href: "/blogs" }]}
+            />
           </div>
         </div>
         {/* Mobile Navigation Button */}
