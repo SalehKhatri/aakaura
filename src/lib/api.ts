@@ -15,9 +15,9 @@ export const getBlogById = async (id: string) => {
   }
 };
 
-export const getAllBlogs = async () => {
+export const getAllBlogs = async (seriesId: string = "") => {
   try {
-    const res = await fetch(`${env.API_URL}/api/blogs`);
+    const res = await fetch(`${env.API_URL}/api/blogs?seriesId=${seriesId}`);
     const result: ApiResponse<Blog[]> = await res.json();
 
     if (!res.ok) throw new Error(result.message);

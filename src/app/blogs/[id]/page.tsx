@@ -3,10 +3,10 @@ import fonts from "@/config/fonts";
 import Image from "next/image";
 import Link from "next/link";
 import MarkdownRenderer from "@/components/ui/MarkdownRenderer";
-import { getBlogById } from "@/lib/api";
+import { getAllBlogs, getBlogById } from "@/lib/api";
 import { Metadata } from "next";
+import Blogs from "@/components/Blogs";
 export const dynamic = "force-dynamic";
-
 
 export const metadata: Metadata = {
   title: "Blog | Aakaura",
@@ -20,6 +20,7 @@ export default async function BlogPage({
 }) {
   const id = (await params).id;
   const blog = await getBlogById(id);
+  const blogInSeries = await getAllBlogs(blog?.seriesId);
 
   if (!blog) {
     return (
@@ -67,10 +68,15 @@ export default async function BlogPage({
           </h1>
 
           {/* Content */}
-          <div>
+          <div className="">
             <MarkdownRenderer content={blog.content} />
           </div>
         </article>
+        <div className="mt-16">
+          {blogInSeries && blogInSeries.length > 0 && (
+            <Blogs blogs={blogInSeries} title="Recommended" />
+          )}
+        </div>
       </Container>
     </section>
   );

@@ -3,7 +3,6 @@ import { ApiError, errorHandler } from "@/middleware/errorHandler";
 import { Blog } from "@/types/Blog";
 import { successResponse } from "@/utils/response";
 import { uploadToCloudinary } from "@/utils/upload";
-import { console } from "inspector";
 
 export const PATCH = errorHandler(
   async (req: Request, { params }: { params: Promise<{ id: string }> }) => {
@@ -16,7 +15,7 @@ export const PATCH = errorHandler(
       const content = formData.get("content") as string | null;
       const isFeatured = formData.get("isFeatured") === "true" ? true : false;
       const file = formData.get("coverImage") as Blob | null;
-      console.log(title, content, isFeatured, file);
+      const seriesId = formData.get("seriesId") as string | null;
 
       let imageUrl: string | undefined;
       if (file && file instanceof Blob) {
@@ -28,6 +27,7 @@ export const PATCH = errorHandler(
       if (content) updatedData.content = content;
       if (typeof isFeatured === "boolean") updatedData.isFeatured = isFeatured;
       if (imageUrl) updatedData.coverImage = imageUrl;
+      if (seriesId) updatedData.seriesId = seriesId;
 
       const updatedBlog = await prisma.blog.update({
         where: { id },

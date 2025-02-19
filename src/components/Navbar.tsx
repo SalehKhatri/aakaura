@@ -124,7 +124,7 @@ export default function Navbar() {
 
   const navItems = [
     {
-      title: "Hi",
+      title: "Hi!",
       submenuItems: [{ name: "Know us :)", href: "/about" }],
     },
     {
@@ -142,10 +142,10 @@ export default function Navbar() {
         <div className="hidden md:flex w-full items-center justify-center">
           <div className="w-full max-w-2xl flex justify-between items-center">
             <NavItem
-              title="Hi"
-              submenuItems={[{ name: "Know us :)", href: "/about" }]}
+              title={navItems[0].title}
+              submenuItems={navItems[0].submenuItems}
             />
-            <Link href="/" className="flex justify-center items-center">
+            <div className="flex justify-center items-center">
               <Image
                 quality={100}
                 priority
@@ -154,16 +154,16 @@ export default function Navbar() {
                 width={200}
                 height={100}
               />
-            </Link>
+            </div>
             <NavItem
-              title="Read On"
-              submenuItems={[{ name: "Our Thoughts", href: "/blogs" }]}
+              title={navItems[1].title}
+              submenuItems={navItems[1].submenuItems}
             />
           </div>
         </div>
         {/* Mobile Navigation Button */}
         <div className="md:hidden w-full flex items-center justify-between px-4">
-          <div className="w-32 h-10 relative">
+          <div className="w-36 h-14 relative">
             <Image
               src="/logo.png"
               alt="Aakaura"

@@ -2,9 +2,15 @@ import { prisma } from "@/config/prisma";
 import { ApiError, errorHandler } from "@/middleware/errorHandler";
 import { successResponse } from "@/utils/response";
 
-export const GET = errorHandler(async () => {
+export const GET = errorHandler(async (req: Request) => {
   try {
+    const { searchParams } = new URL(req.url);
+    const seriesId = searchParams.get("seriesId");
+
+    const whereClause = seriesId ? { seriesId } : {};
+
     const blogs = await prisma.blog.findMany({
+      where: whereClause,
       orderBy: { createdAt: "desc" },
     });
     return successResponse("Blogs Fetched Successfully", blogs);
@@ -16,4 +22,3 @@ export const GET = errorHandler(async () => {
     }
   }
 });
-

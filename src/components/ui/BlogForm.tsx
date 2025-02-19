@@ -10,6 +10,7 @@ import { FaUpload, FaStar, FaTrash } from "react-icons/fa";
 import { BiImage } from "react-icons/bi";
 import { MdTitle } from "react-icons/md";
 import { IoDocumentTextOutline } from "react-icons/io5";
+import { FaPlus } from "react-icons/fa6";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
@@ -71,6 +72,11 @@ interface BlogFormProps {
   isEditing?: boolean; // flag for editing mode
 }
 
+interface Series {
+  id: string;
+  title: string;
+}
+
 export default function BlogForm({
   blogData,
   isEditing = false,
@@ -88,6 +94,13 @@ export default function BlogForm({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [selectedSeries, setSelectedSeries] = useState<string>(
+    blogData?.seriesId || ""
+  );
+  const [series, setSeries] = useState<Series[]>([]);
+  const [newSeriesName, setNewSeriesName] = useState("");
+  const [showNewSeriesModal, setShowNewSeriesModal] = useState(false);
+
   useEffect(() => {
     // When blogData changes, update the form fields if editing
     if (blogData) {
@@ -95,8 +108,25 @@ export default function BlogForm({
       setPreviewImage(blogData.coverImage || null);
       setContent(blogData.content || "");
       setIsFeatured(blogData.isFeatured || false);
+      setSelectedSeries(blogData.seriesId || "");
     }
   }, [blogData]);
+
+  useEffect(() => {
+    const fetchSeries = async () => {
+      try {
+        // Replace with your actual API call
+        const response = await fetch("/api/series");
+        const parsedRes = await response.json();
+        setSeries(parsedRes.data);
+      } catch (error) {
+        console.error("Error fetching series:", error);
+        toast.error("Failed to load series");
+      }
+    };
+
+    fetchSeries();
+  }, []);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
@@ -137,6 +167,32 @@ export default function BlogForm({
     }
   };
 
+  const handleCreateNewSeries = async () => {
+    if (!newSeriesName.trim()) {
+      toast.error("Please enter a series name");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/series", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: newSeriesName }),
+      });
+
+      const parsedRes = await response.json();
+      const newSeries = parsedRes.data;
+      setSeries([...series, newSeries]);
+      setSelectedSeries(newSeries.id);
+      setNewSeriesName("");
+      setShowNewSeriesModal(false);
+      toast.success("Series created successfully");
+    } catch (error) {
+      console.error("Error creating series:", error);
+      toast.error("Failed to create series");
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const toastId = toast.loading("Please wait...");
@@ -153,6 +209,8 @@ export default function BlogForm({
     formData.append("title", title);
     formData.append("content", content);
     formData.append("isFeatured", isFeatured.toString());
+    formData.append("seriesId", selectedSeries); // Add series ID to form data
+
     if (coverImage) {
       formData.append("coverImage", coverImage);
     }
@@ -309,6 +367,77 @@ export default function BlogForm({
               </div>
             </div>
 
+            {/* Series Section */}
+            <div className="p-4 sm:p-6 md:p-8 border-b border-primaryBrown/10">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                <IoDocumentTextOutline className="text-xl sm:text-2xl text-primaryBrown" />
+                <h2 className="text-lg sm:text-xl font-specialElite text-primaryBrown">
+                  Series
+                </h2>
+              </div>
+
+              <div className="flex gap-3">
+                {series.length > 0 ? (
+                  <select
+                    value={selectedSeries}
+                    onChange={(e) => setSelectedSeries(e.target.value)}
+                    className="flex-1 p-3 sm:p-4 border border-primaryBrown/20 rounded-lg bg-secondaryBeige/30 text-primaryBrown shadow-sm focus:outline-none focus:ring-2 focus:ring-primaryRed/50 transition-all text-sm sm:text-base"
+                  >
+                    <option value="">Select a series</option>
+                    {series.map((s) => (
+                      <option key={s.id} value={s.id}>
+                        {s.title}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <div className="flex-1 p-3 sm:p-4 border border-primaryBrown/20 rounded-lg bg-secondaryBeige/30 text-primaryBrown/60 flex items-center justify-center text-sm sm:text-base">
+                    No series available
+                  </div>
+                )}
+
+                <button
+                  type="button"
+                  onClick={() => setShowNewSeriesModal(true)}
+                  className="px-6 py-2.5 sm:px-8 sm:py-3 bg-primaryRed text-white rounded-lg hover:bg-primaryRed/90 transition-all duration-300 flex items-center gap-2 whitespace-nowrap"
+                >
+                  <FaPlus className="text-sm" />
+                  <span>New Series</span>
+                </button>
+              </div>
+            </div>
+            {showNewSeriesModal && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+                <div className="bg-white rounded-lg p-6 max-w-md w-full">
+                  <h3 className="text-xl font-specialElite text-primaryBrown mb-4">
+                    Create New Series
+                  </h3>
+                  <input
+                    type="text"
+                    value={newSeriesName}
+                    onChange={(e) => setNewSeriesName(e.target.value)}
+                    placeholder="Enter series name..."
+                    className="w-full p-3 border border-primaryBrown/20 rounded-lg mb-4"
+                  />
+                  <div className="flex justify-end gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setShowNewSeriesModal(false)}
+                      className="px-4 py-2 border border-primaryBrown/20 rounded-lg hover:bg-primaryBrown/10"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleCreateNewSeries}
+                      className="px-4 py-2 bg-primaryRed text-white rounded-lg hover:bg-primaryRed/90"
+                    >
+                      Create
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
             {/* Featured Toggle */}
             <div className="p-4 sm:p-6 md:p-8">
               <label className="flex items-center gap-2 sm:gap-3 cursor-pointer group">

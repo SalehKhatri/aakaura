@@ -10,7 +10,7 @@ export default function SplashScreen() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const text = "Manifestation of your aura";
+  const text = "Manifesting your aura…";
   const letters = text.split("");
 
   useEffect(() => {
@@ -81,14 +81,14 @@ export default function SplashScreen() {
               animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
               exit={{ opacity: 0, scale: 0.85, y: 50 }}
               transition={{
-                duration: 0.35,
+                duration: 0.5,
                 ease: "easeInOut",
                 scale: { type: "spring", damping: 15, stiffness: 120 },
               }}
-              className="relative w-60 h-60 md:w-[480px] md:h-[480px]"
+              className="relative w-full h-full flex flex-col items-center justify-center"
             >
               <Image
-                src="/logo.png"
+                src="/splashLogo.png"
                 alt="Aakura Logo"
                 className="object-contain"
                 fill
@@ -96,7 +96,7 @@ export default function SplashScreen() {
                 priority
               />
 
-              <div className="absolute bottom-[5%] md:bottom-[15%] left-0 right-0 text-center">
+              <div className="absolute bottom-[25%] md:bottom-[35%] left-0 right-0 text-center">
                 <motion.p
                   className={`${fonts.specialElite} text-base md:text-2xl text-primaryBrown overflow-hidden`}
                   variants={containerVariants}

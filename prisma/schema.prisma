@@ -7,11 +7,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Series {
+  id        String   @id @default(uuid())
+  title     String
+  blogs     Blog[]
+  createdAt DateTime @default(now())
+}
+
 model Blog {
   id         String   @id @default(uuid())
   title      String
   coverImage String
   content    String
   isFeatured Boolean  @default(false)
+  seriesId   String?
+  series     Series?  @relation(fields: [seriesId], references: [id])
   createdAt  DateTime @default(now())
 }

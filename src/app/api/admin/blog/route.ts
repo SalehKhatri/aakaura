@@ -11,6 +11,7 @@ export const POST = errorHandler(async (req: Request) => {
     const content = formData.get("content") as string;
     const isFeatured = formData.get("isFeatured") === "true" ? true : false;
     const file = formData.get("coverImage") as Blob;
+    const seriesId = formData.get("seriesId") as string;
 
     if (!title || !content) {
       throw new ApiError("Title and Content are required", 400);
@@ -26,6 +27,7 @@ export const POST = errorHandler(async (req: Request) => {
       title,
       content,
       coverImage: imageUrl,
+      seriesId,
       isFeatured,
     });
     if (!validation.success) {
@@ -33,7 +35,7 @@ export const POST = errorHandler(async (req: Request) => {
     }
 
     const newBlog = await prisma.blog.create({
-      data: { title, content, coverImage: imageUrl, isFeatured },
+      data: { title, content, coverImage: imageUrl, seriesId, isFeatured },
     });
 
     return successResponse("Blog Created Successfully", newBlog, 201);
