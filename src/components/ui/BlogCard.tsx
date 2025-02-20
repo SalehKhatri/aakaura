@@ -31,11 +31,12 @@ export default function BlogCard({ blog }: BlogCardProps) {
       {/* Content Container - Fixed Height with Scroll */}
       <div className="p-6 flex flex-col h-[calc(600px-288px)] relative">
         {/* Category Tag */}
-        <div className="mb-2 flex-shrink-0">
+        <div className="mb-2 flex-shrink-0 max-w-full">
           <span
-            className={`${fonts.specialElite} bg-primaryRed text-white px-3 py-1 rounded-full text-xs tracking-wide uppercase`}
+            className={`${fonts.specialElite} bg-primaryRed text-white px-3 py-1 rounded-full text-xs tracking-normal uppercase inline-block max-w-[150px] md:max-w-[200px] text-ellipsis overflow-hidden whitespace-nowrap`}
+            title={blog.series?.title || "Blog Post"} // Shows full text on hover
           >
-            Blog Post
+            {blog.series?.title || "Blog Post"}
           </span>
         </div>
 

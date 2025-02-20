@@ -21,6 +21,7 @@ export default async function BlogPage({
   const id = (await params).id;
   const blog = await getBlogById(id);
   const blogInSeries = await getAllBlogs(blog?.seriesId);
+  const recommendedBlogs = blogInSeries?.filter((b) => b.id !== blog?.id);
 
   if (!blog) {
     return (
@@ -73,8 +74,8 @@ export default async function BlogPage({
           </div>
         </article>
         <div className="mt-16">
-          {blogInSeries && blogInSeries.length > 0 && (
-            <Blogs blogs={blogInSeries} title="Recommended" />
+          {recommendedBlogs && recommendedBlogs.length > 0 && (
+            <Blogs blogs={recommendedBlogs} title="Recommended" />
           )}
         </div>
       </Container>

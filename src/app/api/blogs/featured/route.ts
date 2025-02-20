@@ -7,6 +7,9 @@ export const GET = errorHandler(async () => {
     const blogs = await prisma.blog.findMany({
       where: { isFeatured: true },
       orderBy: { createdAt: "desc" },
+      include: {
+        series: true,
+      },
     });
     return successResponse("Featured Blogs Fetched Successfully", blogs);
   } catch (error) {

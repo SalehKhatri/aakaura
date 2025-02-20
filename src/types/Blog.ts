@@ -6,5 +6,9 @@ export interface Blog {
   createdAt: string;
   updatedAt: string;
   isFeatured: boolean;
-  seriesId: string;
+  seriesId?: string;
+  series?: {
+    id: string;
+    title: string;
+  };
 }

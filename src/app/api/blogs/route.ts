@@ -12,6 +12,9 @@ export const GET = errorHandler(async (req: Request) => {
     const blogs = await prisma.blog.findMany({
       where: whereClause,
       orderBy: { createdAt: "desc" },
+      include: {
+        series: true,
+      },
     });
     return successResponse("Blogs Fetched Successfully", blogs);
   } catch (error) {
