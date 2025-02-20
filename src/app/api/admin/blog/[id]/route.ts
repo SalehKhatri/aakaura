@@ -1,8 +1,18 @@
 import { prisma } from "@/config/prisma";
 import { ApiError, errorHandler } from "@/middleware/errorHandler";
-import { Blog } from "@/types/Blog";
 import { successResponse } from "@/utils/response";
 import { uploadToCloudinary } from "@/utils/upload";
+
+type BlogUpdateData = {
+  id: string;
+  title: string;
+  content: string;
+  coverImage: string;
+  createdAt: string;
+  updatedAt: string;
+  isFeatured: boolean;
+  seriesId?: string;
+};
 
 export const PATCH = errorHandler(
   async (req: Request, { params }: { params: Promise<{ id: string }> }) => {
@@ -22,7 +32,7 @@ export const PATCH = errorHandler(
         imageUrl = await uploadToCloudinary(file);
       }
 
-      const updatedData: Partial<Blog> = {};
+      const updatedData: Partial<BlogUpdateData> = {};
       if (title) updatedData.title = title;
       if (content) updatedData.content = content;
       if (typeof isFeatured === "boolean") updatedData.isFeatured = isFeatured;
