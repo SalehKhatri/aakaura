@@ -8,131 +8,267 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-secondaryBeige text-primaryBrown">
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center">
+      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2070"
           alt="Spiritual Background"
           fill
-          className="object-cover brightness-50"
+          className="object-cover brightness-50 scale-105 transform hover:scale-110 transition-transform duration-700"
+          priority
         />
-        <div className="relative z-10 text-center text-white px-6">
+        <div className="relative z-10 text-center text-white px-4 md:px-6 max-w-4xl">
           <motion.h1
-            className={`${fonts.playfair} text-6xl font-bold`}
+            className={`${fonts.dekko} text-5xl md:text-7xl font-bold tracking-wider`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            Aakaura
+            आक
+            <span className={`${fonts.patrickHand} text-4xl md:text-6xl`}>
+              aura
+            </span>
           </motion.h1>
           <motion.p
-            className={`${fonts.specialElite} text-2xl mt-4`}
+            className={`${fonts.specialElite} text-xl md:text-2xl mt-6 tracking-wide`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            Manifesting your aura
+            Where Energy Meets Intention
           </motion.p>
+          <motion.div
+            className="w-24 h-1 bg-white/80 mx-auto mt-6"
+            initial={{ width: 0 }}
+            animate={{ width: 96 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          />
         </div>
       </section>
 
-      {/* About Content */}
-      <section className="max-w-7xl mx-auto px-6 py-20 space-y-24">
-        {/* Our Story */}
+      {/* Main Content */}
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 space-y-32">
+        {/* What is Aakaura */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="grid md:grid-cols-2 gap-12 lg:gap-16"
         >
-          <div>
-            <h2 className={`${fonts.dekko} text-4xl text-primaryRed mb-6`}>
-              Our Story
+          <div className="space-y-8">
+            <h2
+              className={`${fonts.dekko} text-4xl md:text-5xl text-primaryRed relative`}
+            >
+              What is Aakaura?
+              <div className="absolute -bottom-2 left-0 w-16 h-1 bg-primaryRed/30" />
             </h2>
-            <p className={`${fonts.merriweather} text-lg leading-relaxed`}>
-              Aakaura was founded with the vision of creating a sanctuary for
-              spiritual seekers. We believe in the deep connection between mind,
-              body, and soul, curating tools and wisdom to help you embrace your
-              journey of self-discovery.
-            </p>
+            <div
+              className={`${fonts.merriweather} text-lg leading-relaxed space-y-6 text-justify`}
+            >
+              {/* Your existing paragraphs */}
+              <p>
+                We here at आकaura deeply believe that Aakaura is our
+                &apos;calling&apos;, it is really close to our hearts. A
+                &apos;calling&apos; is not something you choose it is something
+                that chooses you. Aakaura has been a beautiful journey of three
+                years and counting, where we nurtured an abstract idea in our
+                minds, a vision and watched it take shape till here. It has been
+                a deeply fulfilling process, and we are immensely grateful to
+                the universe for allowing us to bring this vision into a form
+                that the world can now see. :)
+              </p>
+              <p>
+                Now that we are finally opening Aakaura to the world, we truly
+                hope people resonate with our idea, understand our vision, and
+                connect with what we believe is essential in life- The only
+                reality we ever truly experience is our own perspective. Our
+                thoughts shape our world, and often, the only thing holding us
+                back from reaching our true potential are the limits we have
+                unknowingly set for ourselves.
+              </p>
+              <p>
+                Aakaura is not just a business—it is a community. A space where
+                people can rediscover themselves, break free from limitations,
+                and recognize that their reality is in their hands. We exist in
+                a world full of external influences—societal beliefs, opinions,
+                and the overwhelming presence of social media—that sometimes
+                make us forget the simplicity of our own existence. But reality
+                is fluid. It is what we observe, what we believe, and what we
+                choose to make of it. One of the most profound realizations
+                we&apos;ve had on this journey is that- reality does not demand
+                to be real; it is simply what we perceive it to be.
+              </p>
+              <p>
+                And so, as we share Aakaura with the world, in our unique way,
+                we hope it becomes a space where people embrace self-love, show
+                up for themselves, and find a deeper connection with their own
+                energy. In doing so, we believe this journey will not only
+                transform individuals but also bring greater harmony to the
+                world.
+              </p>
+              <p>
+                Wishing the best for everyone on this beautiful path. {"<"}3{" "}
+              </p>
+              {/* ... rest of your paragraphs ... */}
+            </div>
           </div>
-          <div className="relative h-[350px] rounded-lg overflow-hidden shadow-lg">
-            <Image
-              src="/images/banner.jpg"
-              alt="Sacred Space"
-              fill
-              className="object-cover"
-            />
+          <div className="h-full">
+            <div className="md:sticky md:top-28">
+              <motion.div
+                className="relative h-[450px] rounded-2xl overflow-hidden shadow-xl group"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image
+                  src="/images/banner.jpg"
+                  alt="Sacred Space"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.div>
+            </div>
           </div>
         </motion.div>
 
-        {/* Our Mission */}
+        {/* Our Community */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="grid md:grid-cols-2 gap-12 lg:gap-16"
         >
-          <div className="relative h-[350px] rounded-lg overflow-hidden shadow-lg">
-            <Image
-              src="/images/crystals.jpg"
-              alt="Crystal Collection"
-              fill
-              className="object-cover"
-            />
+          <div className="h-full">
+            <div className="md:sticky md:top-28">
+              <motion.div
+                className="relative h-[450px] rounded-2xl overflow-hidden shadow-xl group"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image
+                  src="/images/crystals.jpg"
+                  alt="Crystal Collection"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.div>
+            </div>
           </div>
-          <div>
-            <h2 className={`${fonts.dekko} text-4xl text-primaryRed mb-6`}>
-              Our Mission
+          <div className="space-y-8">
+            <h2
+              className={`${fonts.dekko} text-4xl md:text-5xl text-primaryRed relative`}
+            >
+              Our Calling
+              <div className="absolute -bottom-2 left-0 w-16 h-1 bg-primaryRed/30" />
             </h2>
-            <p className={`${fonts.mulish} text-lg leading-relaxed`}>
-              We aim to provide high-quality spiritual tools, ethically sourced
-              crystals, and a community-driven platform to share ancient wisdom
-              and modern mindfulness techniques.
-            </p>
+            <div
+              className={`${fonts.mulish} text-lg leading-relaxed space-y-6 text-justify`}
+            >
+              <p>
+                Our founder has studied economics as a Bachelor of Science
+                degree with a minor in finance. From the very beginning, she
+                felt a calling to contribute to a greater good—analyzing
+                India&apos;s economy in real time and understanding how we could
+                improve it through small, meaningful steps. India has an
+                incredibly skilled population, but due to its density, much of
+                this potential remains untapped, especially in villages, hilly
+                regions, and remote mountain areas.
+              </p>
+              <p>
+                We wanted to connect with local artisans from different parts of
+                the country—places where not many people can reach them—and
+                bring their art and culture into our products. This vision is
+                still in its initial stages, but we truly believe we are on the
+                right path, with the universe always supporting us. :D
+              </p>
+              <p>
+                This is what Aakaura stands for: creating beautiful, meaningful
+                products with local artisans while addressing real challenges
+                like employment and restoring confidence in their craftsmanship.
+                But beyond that, our aim has always been to create an energy
+                space—one that helps people understand the significance of their
+                auras. Every interaction, whether with another person or an
+                object, is an exchange of energy. We are constantly engaging
+                with the auras of everything around us.
+              </p>
+              <p>
+                This realization is deeply transformative. It teaches us that we
+                don&apos;t need to depend on anything—not even our business or
+                community—because everything we seek already exists within us.
+                Our energy is everything. The way we think, the mental diet we
+                maintain, the food we eat, the company we keep—all of it shapes
+                our aura, and our aura shapes our life.
+              </p>
+              <p>
+                It&apos;s a beautiful, empowering concept, and what better way
+                to bring It to the world than through Aakaura? We are excited to
+                see where this journey leads us. Here&apos;s to hoping for the
+                best.{" "}
+              </p>{" "}
+            </div>
           </div>
         </motion.div>
 
-        {/* Our Values */}
+        {/* Values Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center"
+          className="space-y-16"
         >
-          <h2 className={`${fonts.dekko} text-4xl text-primaryBrown mb-12`}>
-            Our Values
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="text-center space-y-4">
+            <h2
+              className={`${fonts.dekko} text-4xl md:text-5xl text-primaryRed inline-block relative`}
+            >
+              Our Values
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-1 bg-primaryRed/30" />
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
+              {
+                title: "Self-Empowerment",
+                description:
+                  "Helping individuals realize their own power so they no longer have to seek fulfillment externally.",
+              },
+              {
+                title: "Healing & Transformation",
+                description:
+                  "Encouraging self-healing and personal growth through awareness of energy and auras.",
+              },
               {
                 title: "Authenticity",
                 description:
-                  "We prioritize genuine connections and truthful practices in everything we offer.",
+                  "Creating a space where people embrace their true selves without fear or limitation.",
               },
               {
-                title: "Mindfulness",
+                title: "Community & Connection",
                 description:
-                  "Every item is chosen with intention to help you cultivate awareness in daily life.",
+                  "Building a space where artisans, creators, and seekers come together in harmony.",
               },
               {
-                title: "Community",
+                title: "Mindfulness & Respect",
                 description:
-                  "We foster a space where like-minded individuals can connect, share, and grow together.",
+                  "Encouraging awareness of one's energy, thoughts, and actions, and fostering respect for both human and natural energies.",
+              },
+              {
+                title: "Art & Spirituality",
+                description:
+                  "Blending traditional craftsmanship with spiritual concepts to create products that carry deeper meaning.",
               },
             ].map((value, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow"
-                whileHover={{ scale: 1.05 }}
+                className="bg-white/80 backdrop-blur rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow group relative overflow-hidden"
+                whileHover={{ y: -5 }}
               >
+                <div className="absolute top-0 left-0 w-1 h-0 bg-primaryRed group-hover:h-full transition-all duration-300" />
                 <h3
                   className={`${fonts.patrickHand} text-2xl text-primaryRed mb-4`}
                 >
                   {value.title}
                 </h3>
-                <p className={`${fonts.mulish} text-primaryBrown`}>
-                  {value.description}
-                </p>
+                <p className={`${fonts.mulish}`}>{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -143,24 +279,33 @@ export default function AboutPage() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative h-[400px] rounded-lg overflow-hidden shadow-lg"
+          className="relative h-[450px] rounded-2xl overflow-hidden shadow-xl group"
         >
           <Image
             src="https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?q=80&w=2070"
             alt="Spiritual Journey"
             fill
-            className="object-cover"
+            className="object-cover brightness-75 group-hover:scale-110 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center text-white px-6">
-            <motion.p
-              className={`${fonts.specialElite} text-3xl text-center max-w-2xl`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              Join us on this sacred journey of self-discovery and spiritual
-              growth.
-            </motion.p>
+          <div className="absolute inset-0 flex items-center justify-center text-white px-4 md:px-6">
+            <div className="text-center max-w-3xl space-y-8">
+              <motion.p
+                className={`${fonts.specialElite} text-2xl md:text-3xl lg:text-4xl`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              >
+                Join us on this sacred journey of self-discovery and spiritual
+                growth.
+              </motion.p>
+              <motion.button
+                className="bg-primaryRed hover:bg-primaryRed/90 text-white px-10 py-4 rounded-full text-lg transition-all duration-300 hover:px-12"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Begin Your Journey
+              </motion.button>
+            </div>
           </div>
         </motion.div>
       </section>

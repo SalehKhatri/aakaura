@@ -1,11 +1,12 @@
 import SplashScreen from "@/components/SplashScreen";
 import { Metadata } from "next";
 import Blogs from "@/components/Blogs";
-import ChakraAlignment from "@/components/ChakraAlignment";
-import { chakras } from "@/config/constants";
+// import ChakraAlignment from "@/components/ChakraAlignment";
+// import { chakras } from "@/config/constants";
 import env from "@/config/env";
 import { ApiResponse } from "@/types/Api";
 import { Blog } from "@/types/Blog";
+import OurPath from "@/components/OurPath";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
@@ -34,7 +35,9 @@ export default async function Home() {
     <>
       <SplashScreen />
       {featuredBlogs && <Blogs title="Our Thoughts" blogs={featuredBlogs} />}
-      <ChakraAlignment chakras={chakras} title="Chakra Alignment" />
+      <OurPath />
+      {/* <ChakraAlignment chakras={chakras} title="Chakra Alignment" /> */}
+
     </>
   );
 }

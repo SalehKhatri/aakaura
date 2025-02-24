@@ -33,7 +33,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
         {/* Category Tag */}
         <div className="mb-2 flex-shrink-0 max-w-full">
           <span
-            className={`${fonts.specialElite} bg-primaryRed text-white px-3 py-1 rounded-full text-xs tracking-normal uppercase inline-block max-w-[150px] md:max-w-[200px] text-ellipsis overflow-hidden whitespace-nowrap`}
+            className={`${fonts.specialElite} bg-primaryRed text-white px-3 py-1 rounded-full text-xs tracking-normal uppercase inline-block w-fit max-w-full text-ellipsis overflow-hidden whitespace-nowrap`}
             title={blog.series?.title || "Blog Post"} // Shows full text on hover
           >
             {blog.series?.title || "Blog Post"}

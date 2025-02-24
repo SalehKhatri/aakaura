@@ -85,29 +85,6 @@ export default function Footer() {
             </a>
           </div>
         </div>
-
-        {/* Newsletter Subscription */}
-        <div>
-          <h3 className={`text-xl font-semibold mb-4 ${fonts.playfair}`}>
-            Stay Updated
-          </h3>
-          <p className={`text-base mb-4 ${fonts.mulish}`}>
-            Subscribe to our newsletter for the latest updates.
-          </p>
-          <form className="flex">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="px-4 py-2 rounded-l-lg text-black focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="bg-primaryRed px-4 py-2 rounded-r-lg hover:bg-opacity-90 transition"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
       </Container>
 
       {/* Bottom Bar */}

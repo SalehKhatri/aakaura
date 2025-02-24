@@ -7,7 +7,6 @@ import jwt from "jsonwebtoken";
 export const POST = errorHandler(async (req: Request) => {
   try {
     const { email, password } = await parseJsonBody(req);
-    console.log("Parsed request body:", { email, password });
 
     if (!email || !password) {
       throw new ApiError("Email and Password are required", 400);
