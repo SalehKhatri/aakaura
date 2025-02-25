@@ -8,7 +8,7 @@ import fonts from "@/config/fonts";
 
 export default function SplashScreen() {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const text = "Manifesting your aura…";
   const letters = text.split("");
@@ -183,7 +183,7 @@ export default function SplashScreen() {
                   },
                 }}
               >
-                Tap to Unlock
+                Click to Explore
               </motion.p>
             </motion.div>
           </div>

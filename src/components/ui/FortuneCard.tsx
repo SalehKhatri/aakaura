@@ -14,8 +14,8 @@ interface FortuneCardProps {
 const FortuneCard: FC<FortuneCardProps> = ({ card, onClick }) => {
   return (
     <motion.div
-      className="relative w-72 h-96 rounded-3xl overflow-hidden shadow-xl cursor-pointer bg-secondaryBeige border border-primaryBrown"
-      whileHover={{ scale: 1.06 }}
+      className="relative w-72 h-96 rounded-3xl overflow-hidden  cursor-pointer bg-secondaryBeige border border-primaryBrown shadow-[0_0_15px_rgba(139,69,19,0.15)] hover:shadow-[0_0_20px_rgba(139,69,19,0.3)] transition-shadow duration-300 ease-in-out"
+      whileHover={{ scale: 1.04 }}
       transition={{ type: "spring", stiffness: 200, damping: 10 }}
       onClick={() => onClick(card)}
     >

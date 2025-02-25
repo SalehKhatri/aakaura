@@ -28,7 +28,7 @@ export default function OurPath() {
               transition={{ duration: 0.8 }}
             >
               <div
-                className={`${fonts.merriweather} text-lg leading-relaxed space-y-8 text-justify text-primaryBrown`}
+                className={`${fonts.mulish} text-lg leading-relaxed space-y-8 text-justify text-primaryBrown`}
               >
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -88,7 +88,7 @@ export default function OurPath() {
                 </motion.div>
 
                 <motion.div
-                  className={`${fonts.merriweather} text-lg leading-relaxed text-justify text-primaryBrown bg-white/50 backdrop-blur-sm rounded-xl p-6 shadow-lg`}
+                  className={`${fonts.mulish} text-lg leading-relaxed text-justify text-primaryBrown bg-white/50 backdrop-blur-sm rounded-xl p-6 shadow-lg`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}

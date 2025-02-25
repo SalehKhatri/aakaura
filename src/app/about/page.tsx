@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import fonts from "@/config/fonts";
-import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -14,20 +13,26 @@ export default function AboutPage() {
           src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2070"
           alt="Spiritual Background"
           fill
-          className="object-cover brightness-50 scale-105 transform hover:scale-110 transition-transform duration-700"
+          className="object-cover brightness-[0.35] scale-105 transform hover:scale-110 transition-transform duration-700"
           priority
         />
         <div className="relative z-10 text-center text-white px-4 md:px-6 max-w-4xl">
           <motion.h1
-            className={`${fonts.dekko} text-5xl md:text-7xl font-bold tracking-wider`}
+            className={`${fonts.dekko} text-5xl md:text-7xl font-bold tracking-wider text-primaryBrown relative`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
+            {/* Hindi text with natural shirorekha */}
             आक
+            {/* Latin text with custom line */}
             <span className={`${fonts.patrickHand} text-4xl md:text-6xl`}>
               aura
             </span>
+            {/* Decorative line that's 60% width and centered */}
+            <div className="absolute left-4 right-0 top-[6.5px] md:top-[11px] flex justify-center items-center w-full">
+              <div className="bg-primaryBrown h-1 md:h-[5px] w-[40%] md:w-[55%] block"></div>
+            </div>
           </motion.h1>
           <motion.p
             className={`${fonts.specialElite} text-xl md:text-2xl mt-6 tracking-wide`}
@@ -57,13 +62,13 @@ export default function AboutPage() {
         >
           <div className="space-y-8">
             <h2
-              className={`${fonts.dekko} text-4xl md:text-5xl text-primaryRed relative`}
+              className={`${fonts.specialElite} text-4xl md:text-5xl text-primaryRed relative`}
             >
-              What is Aakaura?
+              Why Aakaura?
               <div className="absolute -bottom-2 left-0 w-16 h-1 bg-primaryRed/30" />
             </h2>
             <div
-              className={`${fonts.merriweather} text-lg leading-relaxed space-y-6 text-justify`}
+              className={`${fonts.mulish} text-lg leading-relaxed space-y-6 text-justify`}
             >
               {/* Your existing paragraphs */}
               <p>
@@ -157,7 +162,7 @@ export default function AboutPage() {
           </div>
           <div className="space-y-8">
             <h2
-              className={`${fonts.dekko} text-4xl md:text-5xl text-primaryRed relative`}
+              className={`${fonts.specialElite} text-4xl md:text-5xl text-primaryRed relative`}
             >
               Our Calling
               <div className="absolute -bottom-2 left-0 w-16 h-1 bg-primaryRed/30" />
@@ -272,34 +277,6 @@ export default function AboutPage() {
                 <p className={`${fonts.mulish}`}>{value.description}</p>
               </motion.div>
             ))}
-          </div>
-        </motion.div>
-
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="relative h-[450px] rounded-2xl overflow-hidden shadow-xl group"
-        >
-          <Image
-            src="https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?q=80&w=2070"
-            alt="Spiritual Journey"
-            fill
-            className="object-cover brightness-75 group-hover:scale-110 transition-transform duration-700"
-          />
-          <div className="absolute inset-0 flex items-center justify-center text-white px-4 md:px-6">
-            <div className="text-center max-w-3xl space-y-8">
-              <Link href={"/"}>
-                <motion.button
-                  className="bg-primaryRed hover:bg-primaryRed/90 text-white px-10 py-4 rounded-full text-lg transition-all duration-300 hover:px-12"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Begin Your Journey
-                </motion.button>
-              </Link>
-            </div>
           </div>
         </motion.div>
       </section>

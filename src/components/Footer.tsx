@@ -1,6 +1,7 @@
 import { FaFacebook, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
 import Container from "./ui/Container";
 import fonts from "@/config/fonts";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -25,24 +26,19 @@ export default function Footer() {
           </h3>
           <ul className={`space-y-3 ${fonts.merriweather}`}>
             <li>
-              <a href="/about" className="hover:text-primaryRed transition">
-                About Us
-              </a>
+              <Link href="/" className="hover:text-primaryRed transition">
+                Home
+              </Link>
             </li>
             <li>
-              <a href="/shop" className="hover:text-primaryRed transition">
-                Shop
-              </a>
+              <Link href="/about" className="hover:text-primaryRed transition">
+                Know Us :)
+              </Link>
             </li>
             <li>
-              <a href="/blog" className="hover:text-primaryRed transition">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="/contact" className="hover:text-primaryRed transition">
-                Contact
-              </a>
+              <Link href="/blog" className="hover:text-primaryRed transition">
+                Our Thoughts
+              </Link>
             </li>
           </ul>
         </div>

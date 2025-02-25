@@ -135,7 +135,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 bg-primaryBeige/90 backdrop-blur-sm shadow ${fonts.playfair}`}
+      className={`fixed top-0 left-0 right-0 z-40 bg-primaryBeige backdrop-blur-sm shadow ${fonts.playfair}`}
     >
       <div className="flex items-center justify-center h-20">
         {/* Desktop Navigation */}
