@@ -22,7 +22,7 @@ export default function Blogs({ title = "Our Thoughts", blogs }: BlogsProps) {
     setIsClient(true);
   }, []);
   return (
-    <section className="py-6">
+    <section className="py-12">
       <Container>
         {/* Section Title */}
         <div className="text-center mb-6 md:mb-8">

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function OurPath() {
   return (
-    <section className="py-16 md:py-24 overflow-x-hidden flex justify-center items-center relative">
+    <section className="py-8 md:py-16 overflow-x-hidden flex justify-center items-center relative">
       <Container>
         {/* Section Title with decorative elements */}
         <div className="text-center mb-16 md:mb-24">
@@ -24,7 +24,7 @@ export default function OurPath() {
             <motion.div
               className="lg:col-span-6 lg:pr-8"
               initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
               <div
@@ -32,7 +32,7 @@ export default function OurPath() {
               >
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
                   Our path for Aakaura is simple yet profound—to make people
@@ -47,7 +47,7 @@ export default function OurPath() {
                 </motion.p>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
                   Once we recognize our own power and potential, we become
@@ -69,7 +69,7 @@ export default function OurPath() {
             <motion.div
               className="lg:col-span-6 space-y-12"
               initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
               <div className="md:sticky md:top-28 space-y-8">
@@ -79,7 +79,7 @@ export default function OurPath() {
                   transition={{ duration: 0.3 }}
                 >
                   <Image
-                    src="/images/banner.jpg"
+                    src="/images/OurPath.jpg"
                     alt="Sacred Space"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -90,7 +90,7 @@ export default function OurPath() {
                 <motion.div
                   className={`${fonts.merriweather} text-lg leading-relaxed text-justify text-primaryBrown bg-white/50 backdrop-blur-sm rounded-xl p-6 shadow-lg`}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                 >
                   <p>

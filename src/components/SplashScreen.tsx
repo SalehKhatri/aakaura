@@ -8,7 +8,7 @@ import fonts from "@/config/fonts";
 
 export default function SplashScreen() {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const text = "Manifesting your aura…";
   const letters = text.split("");
@@ -23,7 +23,6 @@ export default function SplashScreen() {
   useEffect(() => {
     if (pathname === "/") {
       const hasBeenSplashed = sessionStorage.getItem("hasBeenSplashed");
-
       if (!hasBeenSplashed) {
         setIsOpen(true);
         sessionStorage.setItem("hasBeenSplashed", "true");
@@ -123,11 +122,11 @@ export default function SplashScreen() {
 
           {/* Blur effect area */}
           <div
-            className="w-full md:w-[35%] h-[60%] md:h-full bg-primaryBeige/20 backdrop-blur cursor-pointer relative"
+            className="w-full md:w-[35%] h-[60%] md:h-full bg-primaryBeige/20 backdrop-blur cursor-pointer relative flex flex-col items-center justify-center"
             onClick={() => setIsOpen(false)}
           >
             <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              className="flex flex-col items-center"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{
                 opacity: [0.6, 1, 0.6],
@@ -150,19 +149,42 @@ export default function SplashScreen() {
                 transition: { duration: 0.3 },
               }}
             >
+              {/* Arrow Animation */}
               <motion.div
                 animate={{
-                  x: isMobile ? 0 : [-5, 5, -5],
-                  y: isMobile ? [-5, 5, -5] : 0,
+                  x: isMobile ? 0 : [-8, 8, -8],
+                  y: isMobile ? [-8, 8, -8] : 0,
                 }}
                 transition={{
                   repeat: Infinity,
-                  duration: 2,
+                  duration: 1.5,
                   ease: "easeInOut",
                 }}
               >
-                <BsArrowLeftShort className="w-8 h-8 md:w-10 md:h-10 text-primaryBrown opacity-100 rotate-90 md:rotate-0" />
+                <BsArrowLeftShort className="w-10 h-10 md:w-12 md:h-12 text-primaryBrown opacity-100 rotate-90 md:rotate-0 drop-shadow-lg" />
               </motion.div>
+
+              {/* CTA Text */}
+              <motion.p
+                className="mt-2 text-base md:text-xl text-primaryBrown font-semibold tracking-wide"
+                initial={{ opacity: 0.7, scale: 0.95 }}
+                animate={{
+                  opacity: [0.7, 1, 0.7],
+                  scale: [1, 1.05, 1],
+                  textShadow: [
+                    "0px 0px 5px rgba(0,0,0,0.2)",
+                    "0px 0px 10px rgba(0,0,0,0.3)",
+                    "0px 0px 5px rgba(0,0,0,0.2)",
+                  ],
+                  transition: {
+                    repeat: Infinity,
+                    duration: 1.2,
+                    ease: "easeInOut",
+                  },
+                }}
+              >
+                Tap to Unlock
+              </motion.p>
             </motion.div>
           </div>
         </motion.div>

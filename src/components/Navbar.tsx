@@ -145,7 +145,7 @@ export default function Navbar() {
               title={navItems[0].title}
               submenuItems={navItems[0].submenuItems}
             />
-            <div className="flex justify-center items-center">
+            <Link href={"/"} className="flex justify-center items-center">
               <Image
                 quality={100}
                 priority
@@ -154,7 +154,7 @@ export default function Navbar() {
                 width={200}
                 height={100}
               />
-            </div>
+            </Link>
             <NavItem
               title={navItems[1].title}
               submenuItems={navItems[1].submenuItems}
@@ -163,14 +163,14 @@ export default function Navbar() {
         </div>
         {/* Mobile Navigation Button */}
         <div className="md:hidden w-full flex items-center justify-between px-4">
-          <div className="w-36 h-14 relative">
+          <Link href={"/"} className="w-36 h-14 relative">
             <Image
               src="/logo.png"
               alt="Aakaura"
               fill
               className="object-contain"
             />
-          </div>
+          </Link>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-primaryBrown p-2 -mr-2"

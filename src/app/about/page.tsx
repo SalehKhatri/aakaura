@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import fonts from "@/config/fonts";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -119,7 +120,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/images/banner.jpg"
+                  src="/images/AboutUs1.jpg"
                   alt="Sacred Space"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -145,10 +146,10 @@ export default function AboutPage() {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/images/crystals.jpg"
+                  src="/images/AboutUs2.jpg"
                   alt="Crystal Collection"
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
@@ -289,22 +290,15 @@ export default function AboutPage() {
           />
           <div className="absolute inset-0 flex items-center justify-center text-white px-4 md:px-6">
             <div className="text-center max-w-3xl space-y-8">
-              <motion.p
-                className={`${fonts.specialElite} text-2xl md:text-3xl lg:text-4xl`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-              >
-                Join us on this sacred journey of self-discovery and spiritual
-                growth.
-              </motion.p>
-              <motion.button
-                className="bg-primaryRed hover:bg-primaryRed/90 text-white px-10 py-4 rounded-full text-lg transition-all duration-300 hover:px-12"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Begin Your Journey
-              </motion.button>
+              <Link href={"/"}>
+                <motion.button
+                  className="bg-primaryRed hover:bg-primaryRed/90 text-white px-10 py-4 rounded-full text-lg transition-all duration-300 hover:px-12"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Begin Your Journey
+                </motion.button>
+              </Link>
             </div>
           </div>
         </motion.div>
