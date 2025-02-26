@@ -1,22 +1,31 @@
-import { NextRequest, NextResponse } from "next/server";
+import env from "@/config/env";
+import { ApiError } from "@/middleware/errorHandler";
+import jwt from "jsonwebtoken";
 
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL!;
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD!;
+const SECRET_KEY = env.JWT_SECRET || "YOURJWTTOKEN"; // Store this securely
 
-export function authenticate(req: NextRequest) {
+export const authenticate = async (req: Request) => {
   const authHeader = req.headers.get("authorization");
 
-  if (!authHeader || !authHeader.startsWith("Basic ")) {
-    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    throw new ApiError("Unauthorized: No token provided", 401);
   }
 
-  const base64Credentials = authHeader.split(" ")[1];
-  const credentials = atob(base64Credentials).split(":");
-  const [email, password] = credentials;
+  const token = authHeader.split(" ")[1];
 
-  if (email !== ADMIN_EMAIL || password !== ADMIN_PASSWORD) {
-    return NextResponse.json({ message: "Invalid credentials" }, { status: 401 });
+  try {
+    const decoded = jwt.verify(token, SECRET_KEY) as {
+      role: string;
+      email: string;
+    };
+    
+
+    if (decoded.role !== "admin" || decoded.email !== env.ADMIN_EMAIL) {
+      throw new ApiError("Forbidden: Admin access required", 403);
+    }
+
+    return decoded;
+  } catch {
+    throw new ApiError("Unauthorized: Invalid token", 401);
   }
-
-  return null; // Authenticated successfully
-}
+};

@@ -14,5 +14,5 @@ export const blogSchema = z.object({
     .url({ message: "Invalid cover image URL format" }),
 
   isFeatured: z.boolean({ required_error: "isFeatured is required" }),
-  seriesId: z.string().optional(),
+  seriesId: z.string().optional().nullable(),
 });

@@ -17,13 +17,9 @@ export default function AdminLayout({
 
   useEffect(() => {
     const token = Cookies.get("admin_token");
-
-    if (!token) {
-      router.push("/admin/login");
-    } else {
-      setIsLoading(false);
-    }
-  }, [router]);
+    if (!token) return router.push("/admin/login");
+    setIsLoading(false);
+  }, [router, pathname]);
   // Skip auth check if we're already on the login page
   if (pathname === "/admin/login") {
     return <>{children}</>;

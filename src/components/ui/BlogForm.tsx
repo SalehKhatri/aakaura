@@ -11,6 +11,7 @@ import { BiImage } from "react-icons/bi";
 import { MdTitle } from "react-icons/md";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
+import Cookies from "js-cookie";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
@@ -19,6 +20,9 @@ export const updateBlog = async (id: string, formData: FormData) => {
     const res = await fetch(`/api/admin/blog/${id}`, {
       method: "PATCH",
       body: formData,
+      headers: {
+        Authorization: `Bearer ${Cookies.get("admin_token")}`,
+      },
     });
     const result: ApiResponse<Blog> = await res.json();
 
@@ -34,6 +38,9 @@ export const deleteBlog = async (id: string) => {
   try {
     const res = await fetch(`/api/admin/blog/${id}`, {
       method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${Cookies.get("admin_token")}`,
+      },
     });
     if (!res.ok) throw new Error("Failed to delete blog");
     return true;
@@ -51,6 +58,9 @@ export const createBlog = async (formData: FormData) => {
     const response = await fetch(`/api/admin/blog`, {
       method: "POST",
       body: formData,
+      headers: {
+        Authorization: `Bearer ${Cookies.get("admin_token")}`,
+      },
     });
 
     const responseData = await response.json();
@@ -176,7 +186,10 @@ export default function BlogForm({
     try {
       const response = await fetch("/api/series", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${Cookies.get("admin_token")}`,
+        },
         body: JSON.stringify({ title: newSeriesName }),
       });
 

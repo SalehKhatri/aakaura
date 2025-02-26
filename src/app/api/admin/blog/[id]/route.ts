@@ -1,4 +1,5 @@
 import { prisma } from "@/config/prisma";
+import { authenticate } from "@/middleware/auth";
 import { ApiError, errorHandler } from "@/middleware/errorHandler";
 import { successResponse } from "@/utils/response";
 import { uploadToCloudinary } from "@/utils/upload";
@@ -17,6 +18,7 @@ type BlogUpdateData = {
 export const PATCH = errorHandler(
   async (req: Request, { params }: { params: Promise<{ id: string }> }) => {
     try {
+      await authenticate(req); // 🔹 Ensure user is admin
       const id = (await params).id;
       if (!id) throw new ApiError("Blog ID is required", 400);
 
@@ -58,6 +60,7 @@ export const PATCH = errorHandler(
 export const DELETE = errorHandler(
   async (req: Request, { params }: { params: Promise<{ id: string }> }) => {
     try {
+      await authenticate(req); // 🔹 Ensure user is admin
       const id = (await params).id;
       if (!id) {
         throw new ApiError("Blog ID is required", 400);

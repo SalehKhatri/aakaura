@@ -1,4 +1,5 @@
 import { prisma } from "@/config/prisma";
+import { authenticate } from "@/middleware/auth";
 import { ApiError, errorHandler } from "@/middleware/errorHandler";
 import { blogSchema } from "@/types/blogSchema";
 import { successResponse } from "@/utils/response";
@@ -6,12 +7,14 @@ import { uploadToCloudinary } from "@/utils/upload";
 
 export const POST = errorHandler(async (req: Request) => {
   try {
+    await authenticate(req); // 🔹 Ensure user is admin
+
     const formData = await req.formData();
     const title = formData.get("title") as string;
     const content = formData.get("content") as string;
     const isFeatured = formData.get("isFeatured") === "true" ? true : false;
     const file = formData.get("coverImage") as Blob;
-    const seriesId = formData.get("seriesId") as string;
+    const seriesId = (formData.get("seriesId") as string) || null;
 
     if (!title || !content) {
       throw new ApiError("Title and Content are required", 400);
@@ -35,7 +38,13 @@ export const POST = errorHandler(async (req: Request) => {
     }
 
     const newBlog = await prisma.blog.create({
-      data: { title, content, coverImage: imageUrl, seriesId, isFeatured },
+      data: {
+        title,
+        content,
+        coverImage: imageUrl,
+        isFeatured,
+        seriesId,
+      },
     });
 
     return successResponse("Blog Created Successfully", newBlog, 201);

@@ -20,7 +20,7 @@ export const POST = errorHandler(async (req: Request) => {
       throw new ApiError("JWT Secret is not defined", 500);
     }
 
-    const token = jwt.sign({ email }, env.JWT_SECRET, { expiresIn: "7d" });
+    const token = jwt.sign({ email, role: "admin" }, env.JWT_SECRET, { expiresIn: "7d" });
 
     return successResponse("Login Successful", { token }, 200);
   } catch (error) {

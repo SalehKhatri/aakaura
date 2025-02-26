@@ -1,9 +1,11 @@
 import { prisma } from "@/config/prisma";
+import { authenticate } from "@/middleware/auth";
 import { ApiError, errorHandler } from "@/middleware/errorHandler";
 import { seriesSchema } from "@/types/seriesSchema";
 import { successResponse } from "@/utils/response";
 
 export const POST = errorHandler(async (req: Request) => {
+  await authenticate(req); // 🔹 Ensure user is admin
   const { title } = await req.json();
 
   if (!title) {
