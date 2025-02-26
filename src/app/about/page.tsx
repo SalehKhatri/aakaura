@@ -141,7 +141,7 @@ export default function AboutPage() {
                   transition={{ duration: 0.3 }}
                 >
                   <Image
-                    src="/images/AboutUs1.jpg"
+                    src="/images/About_1.jpg"
                     alt="Sacred Space"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -167,10 +167,10 @@ export default function AboutPage() {
                   transition={{ duration: 0.3 }}
                 >
                   <Image
-                    src="/images/AboutUs2.jpg"
+                    src="/images/About_2.jpg"
                     alt="Crystal Collection"
                     fill
-                    className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover object-right group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.div>

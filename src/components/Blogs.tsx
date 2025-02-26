@@ -49,10 +49,12 @@ export default function Blogs({ title = "Our Thoughts", blogs }: BlogsProps) {
               768: {
                 slidesPerView: 2.3,
                 spaceBetween: 30,
+                loop: true,
               },
               1024: {
                 slidesPerView: 3.1,
-                spaceBetween: 50,
+                spaceBetween: 40,
+                loop: true,
               },
             }}
           >
