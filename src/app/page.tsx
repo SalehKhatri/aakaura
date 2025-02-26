@@ -35,8 +35,8 @@ export default async function Home() {
   return (
     <>
       <SplashScreen />
-      <OurPath />
       <Fortune />
+      <OurPath />
       {featuredBlogs && <Blogs title="Our Thoughts" blogs={featuredBlogs} />}
       {/* <ChakraAlignment chakras={chakras} title="Chakra Alignment" /> */}
     </>

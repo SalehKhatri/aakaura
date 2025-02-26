@@ -16,7 +16,7 @@ export default async function Blogs() {
   const blogs = await getAllBlogs();
 
   return (
-    <section className="pb-6">
+    <section className="py-6">
       <Container>
         {/* Section Title */}
         <div className="text-center mb-12 md:mb-16">

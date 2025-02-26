@@ -51,7 +51,7 @@ export default function Blogs({ title = "Our Thoughts", blogs }: BlogsProps) {
                 spaceBetween: 30,
               },
               1024: {
-                slidesPerView: 3,
+                slidesPerView: 3.1,
                 spaceBetween: 50,
               },
             }}

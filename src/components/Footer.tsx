@@ -12,7 +12,7 @@ export default function Footer() {
           <h3 className={`text-xl font-semibold mb-4 ${fonts.playfair}`}>
             Contact Us
           </h3>
-          <p className={`text-base ${fonts.mulish}`}>support@aakaura.com</p>
+          <p className={`text-base ${fonts.mulish}`}>support@aakaura.in</p>
           <p className={`text-base ${fonts.mulish}`}>+91 8619029656</p>
           <p className={`text-base ${fonts.mulish}`}>Jaipur, Rajasthan</p>
         </div>
