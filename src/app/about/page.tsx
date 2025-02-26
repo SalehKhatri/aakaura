@@ -10,15 +10,16 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=2070"
+          quality={100}
+          src="/images/aboutBanner.jpg"
           alt="Spiritual Background"
           fill
-          className="object-cover brightness-[0.35] scale-105 transform hover:scale-110 transition-transform duration-700"
+          className="object-cover brightness-[0.55] scale-105 transform hover:scale-110 transition-transform duration-700"
           priority
         />
         <div className="relative z-10 text-center text-white px-4 md:px-6 max-w-4xl">
           <motion.h1
-            className={`${fonts.dekko} text-5xl md:text-7xl font-bold tracking-wider text-primaryBrown relative`}
+            className={`${fonts.dekko} text-5xl md:text-7xl font-bold tracking-wider text-primaryBeige relative`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -26,12 +27,12 @@ export default function AboutPage() {
             {/* Hindi text with natural shirorekha */}
             आक
             {/* Latin text with custom line */}
-            <span className={`${fonts.patrickHand} text-4xl md:text-6xl`}>
+            <span className={`${fonts.specialElite} text-4xl md:text-6xl`}>
               aura
             </span>
             {/* Decorative line that's 60% width and centered */}
             <div className="absolute left-4 right-0 top-[6.5px] md:top-[11px] flex justify-center items-center w-full">
-              <div className="bg-primaryBrown h-1 md:h-[5px] w-[40%] md:w-[55%] block"></div>
+              <div className="bg-primaryBeige h-1 md:h-[5px] w-[55%] md:w-[75%] block"></div>
             </div>
           </motion.h1>
           <motion.p
@@ -40,7 +41,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            Where Energy Meets Intention
+            Manifesting your aura…
           </motion.p>
           <motion.div
             className="w-24 h-1 bg-white/80 mx-auto mt-6"

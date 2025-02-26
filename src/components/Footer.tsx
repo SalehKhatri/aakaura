@@ -1,7 +1,7 @@
-import { FaFacebook, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
 import Container from "./ui/Container";
 import fonts from "@/config/fonts";
 import Link from "next/link";
+import { FaThreads, FaInstagram } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -13,10 +13,8 @@ export default function Footer() {
             Contact Us
           </h3>
           <p className={`text-base ${fonts.mulish}`}>support@aakaura.com</p>
-          <p className={`text-base ${fonts.mulish}`}>+1 234 567 890</p>
-          <p className={`text-base ${fonts.mulish}`}>
-            123 Spiritual St, Mystic City
-          </p>
+          <p className={`text-base ${fonts.mulish}`}>+91 8619029656</p>
+          <p className={`text-base ${fonts.mulish}`}>Jaipur, Rajasthan</p>
         </div>
 
         {/* Quick Links */}
@@ -36,7 +34,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/blog" className="hover:text-primaryRed transition">
+              <Link href="/blogs" className="hover:text-primaryRed transition">
                 Our Thoughts
               </Link>
             </li>
@@ -50,15 +48,7 @@ export default function Footer() {
           </h3>
           <div className="flex items-center space-x-6">
             <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primaryBeige hover:text-primaryRed transition"
-            >
-              <FaFacebook size={24} />
-            </a>
-            <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/aakaura.in?igsh=ZjY3aTc0dzJ2czN6"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primaryBeige hover:text-primaryRed transition"
@@ -66,18 +56,12 @@ export default function Footer() {
               <FaInstagram size={24} />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://www.threads.net/@aakaura.in?invite=0"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primaryBeige hover:text-primaryRed transition"
             >
-              <FaTwitter size={24} />
-            </a>
-            <a
-              href="mailto:support@aakaura.com"
-              className="text-primaryBeige hover:text-primaryRed transition"
-            >
-              <FaEnvelope size={24} />
+              <FaThreads size={24} />
             </a>
           </div>
         </div>
