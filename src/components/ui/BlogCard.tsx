@@ -42,7 +42,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
 
         {/* Title - Fixed Height */}
         <h3
-          className={`${fonts.merriweather} text-2xl md:text-3xl text-primaryBrown mb-3 leading-snug group-hover:text-primaryRed transition-colors duration-300 line-clamp-2 flex-shrink-0`}
+          className={`${fonts.merriweather} text-2xl md:text-2xl text-primaryBrown mb-3 leading-snug group-hover:text-primaryRed transition-colors duration-300 line-clamp-2 flex-shrink-0`}
         >
           {blog.title}
         </h3>

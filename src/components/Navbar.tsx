@@ -35,7 +35,7 @@ const NavItem = ({ title, submenuItems }: NavItemProps) => {
         </button>
       ) : (
         <button
-          className={`px-4 py-2 text-2xl text-primaryBrown hover:text-primaryRed transition-colors inline-flex items-center gap-1 ${fonts.specialElite} tracking-wide`}
+          className={`px-4 py-2 text-[22px] text-primaryBrown hover:text-primaryRed transition-colors inline-flex items-center gap-1 ${fonts.specialElite} tracking-wide`}
         >
           {title}
           <IoIosArrowDown
