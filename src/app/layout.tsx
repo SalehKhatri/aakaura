@@ -55,7 +55,7 @@ export default function RootLayout({
           property="og:description"
           content="Aakaura is your sanctuary for spiritual awakening, mindfulness, and holistic healing."
         />
-        <meta property="og:image" content="/images/splashLogo.png" />
+        <meta property="og:image" content="/splashLogo.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -65,7 +65,7 @@ export default function RootLayout({
           name="twitter:description"
           content="Explore handcrafted decor, meditation guides, and holistic healing resources."
         />
-        <meta name="twitter:image" content="/images/splashLogo.png" />
+        <meta name="twitter:image" content="/splashLogo.png" />
       </head>
       <body className="bg-secondaryBeige">
         <Toaster />

@@ -6,7 +6,7 @@ export const defaultSEO = {
     "Aakaura is your sanctuary for spiritual awakening, mindfulness, and holistic healing. Explore handcrafted spiritual decor, chakra balancing, meditation guides, reiki healing, and manifestation techniques for a harmonious life.",
   keywords:
     "Aakaura, spirituality, aura, wellness, energy healing, chakra balancing, meditation, mindfulness, positivity, manifestation, self-love, spiritual protection, cleansing rituals, artisans, handcrafted decor, bonsai trees, root connection, personal growth, spiritual journey, holistic healing, self-improvement, zen lifestyle, inner peace, divine energy, yoga, reiki therapy, crystal healing, law of attraction, spiritual awakening, higher consciousness, guided meditation, metaphysical store, esoteric wisdom, soul alignment",
-  image: "/images/splashLogo.png",
+  image: "/splashLogo.png",
   url: "https://aakaura.in",
 };
 
