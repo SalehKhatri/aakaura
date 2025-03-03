@@ -80,7 +80,7 @@ const Fortune = () => {
   return (
     <section className="flex items-center justify-center min-h-screen py-12">
       <Container className="flex flex-col items-center justify-center space-y-8 w-full">
-        <Heading title="The Aakaura Code" />
+        <Heading tag="h1" title="The Aakaura Code" />
         {/* Grid of Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-12 gap-8 w-full justify-items-center py-8">
           {fortuneCards.map((card, index) => (
