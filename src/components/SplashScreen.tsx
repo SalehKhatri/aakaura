@@ -94,6 +94,26 @@ export default function SplashScreen() {
                 quality={100}
                 priority
               />
+              <div className="absolute top-[20%] left-[10%] flex items-center space-x-2">
+                <motion.p
+                  className={`${fonts.specialElite} text-base md:text-2xl text-primaryBrown`}
+                  initial={{ opacity: 0, y: 20, scale: 0.85, rotate: -10 }}
+                  animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+                  transition={{
+                    delay: 0.5,
+                    duration: 0.5,
+                    ease: "easeInOut",
+                    rotate: { type: "spring", damping: 10, stiffness: 100 },
+                  }}
+                  style={{
+                    lineHeight: "1.2", // Adjust for better alignment
+                    letterSpacing: "0.5px", // Improve spacing
+                  }}
+                >
+                  <span className="font-[inherit]">आकर</span>{" "}
+                  <span className="font-[inherit]">to your aura:</span>
+                </motion.p>
+              </div>
 
               <div className="absolute bottom-[25%] md:bottom-[35%] left-0 right-0 text-center">
                 <motion.p

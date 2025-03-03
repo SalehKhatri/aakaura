@@ -1,20 +1,18 @@
 import SplashScreen from "@/components/SplashScreen";
-import { Metadata } from "next";
 import Blogs from "@/components/Blogs";
-// import ChakraAlignment from "@/components/ChakraAlignment";
-// import { chakras } from "@/config/constants";
 import env from "@/config/env";
 import { ApiResponse } from "@/types/Api";
 import { Blog } from "@/types/Blog";
 import OurPath from "@/components/OurPath";
 import Fortune from "@/components/Fortune";
+import { generateSEO } from "@/lib/seo";
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Home | Aakaura",
+export const metadata = generateSEO({
+  title: "Aakaura - Spiritual Growth & Wellness",
   description:
-    "Aakaura is a platform for spiritual growth and self-improvement",
-};
+    "Aakaura is a sanctuary for spiritual seekers, offering handcrafted decor, healing crystals, chakra balancing, meditation guides, and holistic well-being resources.",
+});
 
 const getFeaturedBlogs = async () => {
   try {

@@ -4,14 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import MarkdownRenderer from "@/components/ui/MarkdownRenderer";
 import { getAllBlogs, getBlogById } from "@/lib/api";
-import { Metadata } from "next";
 import Blogs from "@/components/Blogs";
+import { generateSEO } from "@/lib/seo";
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Blog | Aakaura",
-  description: "Read our latest blogs.",
-};
+export const metadata = generateSEO({
+  title: "Blog Post",
+  description: "Read the latest blog post from Aakaura.",
+});
 
 export default async function BlogPage({
   params,

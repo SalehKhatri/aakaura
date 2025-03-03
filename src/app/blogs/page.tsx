@@ -3,14 +3,15 @@ import Container from "@/components/ui/Container";
 import Heading from "@/components/ui/Heading";
 import fonts from "@/config/fonts";
 import { getAllBlogs } from "@/lib/api";
-import { Metadata } from "next";
+import { generateSEO } from "@/lib/seo";
 export const dynamic = "force-dynamic";
 
-
-export const metadata: Metadata = {
-  title: "Blogs | Aakaura",
-  description: "Read our latest blogs.",
-};
+export const metadata = generateSEO({
+  title: "Aakaura - Our Thoughts",
+  description:
+    "Explore the latest blogs from Aakaura, covering topics on spirituality, wellness, healing, meditation, and more.",
+  url: "https://aakaura.in/blogs",
+});
 
 export default async function Blogs() {
   const blogs = await getAllBlogs();
