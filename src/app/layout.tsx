@@ -66,7 +66,7 @@ export default function RootLayout({
           content="Explore handcrafted decor, meditation guides, and holistic healing resources."
         />
         <meta name="twitter:image" content="/splashLogo.png" />
-        <script defer data-domain="aakaura.in" src="http://157.173.222.124:8000/js/script.js"></script>
+        <script defer data-domain="aakaura.in" src="http://analytics.aakaura.in/js/script.js"></script>
       </head>
       <body className="bg-secondaryBeige">
         <Toaster />
