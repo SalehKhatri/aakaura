@@ -98,7 +98,7 @@ const Fortune = () => {
   return (
     <section className="flex items-center justify-center min-h-screen py-12">
       <Container className="flex flex-col items-center justify-center space-y-8 w-full">
-        <div className="text-center space-y-6">
+        <div className="text-center space-y-5 md:space-y-4">
           <Heading tag="h1" title="The Aakaura Code" />
 
           <motion.h2
@@ -118,7 +118,7 @@ const Fortune = () => {
           </motion.h2>
 
           <h3
-            className={`${fonts.patrickHand} text-primaryBrown text-base md:text-lg lg:text-[22px] lg:leading-loose italic`}
+            className={`${fonts.specialElite} text-primaryBrown text-base md:text-lg lg:text-[22px] lg:leading-loose italic`}
           >
             {`Tap on a card, follow your intuition, and explore a blog made JUST for you.. (maybe, maybe not) ;)
 `}
