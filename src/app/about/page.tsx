@@ -223,7 +223,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   It&apos;s a beautiful, empowering concept, and what better way
-                  to bring It to the world than through Aakaura? We are excited
+                  to bring it to the world than through Aakaura? We are excited
                   to see where this journey leads us. Here&apos;s to hoping for
                   the best.{" "}
                 </p>{" "}

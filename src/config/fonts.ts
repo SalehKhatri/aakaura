@@ -5,6 +5,7 @@ import {
   Merriweather,
   Mulish,
   Patrick_Hand,
+  Inter,
 } from "next/font/google";
 
 const playfair = Playfair_Display({ subsets: ["latin"] });
@@ -38,6 +39,12 @@ const patrickHand = Patrick_Hand({
   variable: "--font-patrickHan",
 });
 
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-inter",
+});
+
 const fonts = {
   dekko: dekko.className,
   specialElite: specialElite.className,
@@ -45,6 +52,7 @@ const fonts = {
   merriweather: merriweather.className,
   mulish: mulish.className,
   patrickHand: patrickHand.className,
+  inter: inter.className,
 };
 
 export default fonts;
