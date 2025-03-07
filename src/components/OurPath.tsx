@@ -34,7 +34,7 @@ export default function OurPath() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="list-disc space-y-2"
+                  className="list-disc space-y-4 pl-5"
                 >
                   <li>
                     <span className="font-semibold">
