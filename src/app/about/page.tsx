@@ -87,48 +87,38 @@ export default function AboutPage() {
               >
                 {/* Your existing paragraphs */}
                 <p>
-                  We here at आकaura deeply believe that Aakaura is our
-                  &apos;calling&apos;, it is really close to our hearts. A
-                  &apos;calling&apos; is not something you choose, it is
-                  something that chooses you. Aakaura has been a beautiful
-                  journey of three years and counting, where we nurtured an
-                  abstract idea in our minds, a vision and watched it take shape
-                  till here. It has been a deeply fulfilling process, and we are
-                  immensely grateful to the universe for allowing us to bring
-                  this vision into a form that the world can now see. :)
+                  We at Aakaura believe this is our calling — not something we
+                  chose, but something that chose us. This journey has been a
+                  deeply fulfilling process, and we&apos;re immensely grateful
+                  to share it with the world.
                 </p>
                 <p>
-                  Now that we are finally opening Aakaura to the world, we truly
-                  hope people resonate with our idea, understand our vision, and
-                  connect with what we believe is essential in life- The only
-                  reality we ever truly experience is our own perspective. Our
-                  thoughts shape our world, and often, the only thing holding us
-                  back from reaching our true potential are the limits we have
-                  unknowingly set for ourselves.
+                  Aakaura is not just a business; it&apos;s a space for
+                  self-discovery and inner freedom. We live in a world filled
+                  with external influences — societal beliefs, opinions, and the
+                  constant noise of social media. It&apos;s easy to forget the
+                  simplicity of existence. But reality is fluid. It doesn&apos;t
+                  demand to be real; it is what we perceive it to be.
                 </p>
                 <p>
-                  Aakaura is not just a business—it is a community. A space
-                  where people can rediscover themselves, break free from
-                  limitations, and recognize that their reality is in their
-                  hands. We exist in a world full of external
-                  influences—societal beliefs, opinions, and the overwhelming
-                  presence of social media—that sometimes make us forget the
-                  simplicity of our own existence. But reality is fluid. It is
-                  what we observe, what we believe, and what we choose to make
-                  of it. One of the most profound realizations we&apos;ve had on
-                  this journey is that- reality does not demand to be real; it
-                  is simply what we perceive it to be.
+                  The truth is, our thoughts shape our world.
+                  <br />
+                  The limits we unknowingly set for ourselves are often the only
+                  things holding us back. When we recognize our own power, we
+                  navigate life with more love, awareness, and appreciation for
+                  the energy within and around us.
                 </p>
                 <p>
-                  And so, as we share Aakaura with the world, in our unique way,
-                  we hope it becomes a space where people embrace self-love,
-                  show up for themselves, and find a deeper connection with
-                  their own energy. In doing so, we believe this journey will
-                  not only transform individuals but also bring greater harmony
-                  to the world.
+                  Through Aakaura, we hope to help people reconnect with this
+                  truth.
+                  <br />
+                  To embrace self-love, show up for themselves, and build a
+                  deeper connection with their energy. Because when we align
+                  with our true selves, we naturally bring more peace and
+                  harmony to the world.
                 </p>
                 <p>
-                  Wishing the best for everyone on this beautiful path. {"<"}3{" "}
+                  Wishing love and light to everyone on this beautiful path.
                 </p>
                 {/* ... rest of your paragraphs ... */}
               </div>
@@ -187,46 +177,41 @@ export default function AboutPage() {
                 className={`${fonts.mulish} text-lg leading-relaxed space-y-6 text-justify`}
               >
                 <p>
-                  Our founder has studied economics as a Bachelor of Science
-                  degree with a minor in finance. From the very beginning, she
-                  felt a calling to contribute to a greater good—analyzing
-                  India&apos;s economy in real time and understanding how we
-                  could improve it through small, meaningful steps. India has an
-                  incredibly skilled population, but due to its density, much of
-                  this potential remains untapped, especially in villages, hilly
-                  regions, and remote mountain areas.
+                  Aakaura&apos;s vision is deeply rooted in connection — with
+                  people, energy, and the soul of India.
                 </p>
                 <p>
-                  We wanted to connect with local artisans from different parts
-                  of the country—places where not many people can reach them—and
-                  bring their art and culture into our products. This vision is
-                  still in its initial stages, but we truly believe we are on
-                  the right path, with the universe always supporting us. :D
+                  Our founder, with a background in economics and finance,
+                  always felt called to contribute to something greater. She saw
+                  the immense, untapped potential of skilled artisans in
+                  villages, hilly regions, and remote areas. Aakaura was born
+                  from the desire to bring their art and culture into meaningful
+                  products while addressing real challenges like employment and
+                  restoring confidence in their craftsmanship.
                 </p>
                 <p>
-                  This is what Aakaura stands for: creating beautiful,
-                  meaningful products with local artisans while addressing real
-                  challenges like employment and restoring confidence in their
-                  craftsmanship. But beyond that, our aim has always been to
-                  create an energy space—one that helps people understand the
-                  significance of their auras. Every interaction, whether with
-                  another person or an object, is an exchange of energy. We are
-                  constantly engaging with the auras of everything around us.
+                  But Aakaura is more than just products — it&apos;s an energy
+                  space. We believe every interaction, whether with a person or
+                  an object, is an exchange of energy. This realization is
+                  transformative: it teaches us that everything we seek already
+                  exists within us.
                 </p>
                 <p>
-                  This realization is deeply transformative. It teaches us that
-                  we don&apos;t need to depend on anything—not even our business
-                  or community—because everything we seek already exists within
-                  us. Our energy is everything. The way we think, the mental
-                  diet we maintain, the food we eat, the company we keep—all of
-                  it shapes our aura, and our aura shapes our life.
+                  Our energy is everything.
+                  <br />
+                  The way we think, the mental diet we maintain, the food we
+                  eat, and the company we keep all shape our aura — and our aura
+                  shapes our life.
                 </p>
                 <p>
-                  It&apos;s a beautiful, empowering concept, and what better way
-                  to bring it to the world than through Aakaura? We are excited
-                  to see where this journey leads us. Here&apos;s to hoping for
-                  the best.{" "}
-                </p>{" "}
+                  It&apos;s a beautiful, empowering truth. And through Aakaura,
+                  we hope to share this with the world, one small, meaningful
+                  step at a time.
+                </p>
+                <p>
+                  Here&apos;s to the journey ahead, with the universe always
+                  guiding us.
+                </p>
               </div>
             </div>
           </motion.div>

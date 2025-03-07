@@ -30,37 +30,60 @@ export default function OurPath() {
               <div
                 className={`${fonts.mulish} text-lg md:text-xl leading-relaxed space-y-8 text-justify text-primaryBrown`}
               >
-                <motion.p
+                <motion.ul
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
+                  className="list-disc space-y-2"
                 >
-                  Our path for Aakaura is simple yet profound—to make people
-                  realise their strengths, become the best versions of
-                  themselves, and never stop showing up for themselves. We do
-                  this because we have experienced firsthand- the transformative
-                  power of energy, self-love, and inner healing. Like every
-                  human, we have faced dark moments, but through deep reverence
-                  and love for our own energy, we have realized that we never
-                  needed to depend on anyone else for our fulfillment. This
-                  realization is what makes us truly human.
-                </motion.p>
+                  <li>
+                    <span className="font-semibold">
+                      Empowerment & Self-Discovery:
+                    </span>{" "}
+                    Our purpose is to help people realize their strengths,
+                    become their best selves, and show up for themselves every
+                    day.
+                  </li>
+                  <li>
+                    <span className="font-semibold">
+                      The Power of Energy & Inner Healing:
+                    </span>{" "}
+                    We&apos;ve experienced how energy, self-love, and healing
+                    can transform our lives. Like everyone, we&apos;ve faced
+                    darkness — but by honoring our own energy, we discovered
+                    that true fulfillment comes from within.
+                  </li>
+                  <li>
+                    <span className="font-semibold">
+                      Living in Harmony with Life:
+                    </span>{" "}
+                    When we embrace our inner power, we navigate relationships
+                    better, appreciate life deeply, and fall in love with nature
+                    and small moments of beauty.
+                  </li>
+                  <li>
+                    <span className="font-semibold">
+                      Respecting Our Energy & Others:
+                    </span>{" "}
+                    Just as nature understands its strength, we, too, begin to
+                    respect the energy within ourselves and those around us.
+                  </li>
+                  <li>
+                    <span className="font-semibold">
+                      No Set Techniques, Just Connection:
+                    </span>{" "}
+                    We believe people rarely need rigid methods to access their
+                    strength. Through our products, storytelling, and the
+                    experiences we create, we simply guide people back to this
+                    truth.
+                  </li>
+                </motion.ul>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  Once we recognize our own power and potential, we become
-                  better at navigating relationships, appreciating life, and
-                  embracing the beauty of existence. We begin to fall in love
-                  with nature, with the smallest moments, and with the energy
-                  that surrounds us. Just as nature understands its own power,
-                  we, too, start respecting the energy within ourselves and
-                  others. We believe that we seldom require any techniques or
-                  set methods to understand our strengths. Through our products,
-                  our storytelling, and the experience we create, we want to
-                  help people reconnect with this truth, yes, that&apos;s
-                  exactly what we wish for. :)
+                  Yes, that&apos;s exactly what we wish for.
                 </motion.p>
               </div>
             </motion.div>
@@ -95,14 +118,13 @@ export default function OurPath() {
                 >
                   <p>
                     Every product we craft carries the love and dedication of
-                    local artisans— individuals who, despite never having worked
-                    on such designs before, have embraced this journey with open
-                    hearts. We not only collaborate with them on their artistry
-                    but also introduce them to the power of energies and
-                    auras—concepts that are new to them yet resonate deeply.
-                    Aakaura is more than just a brand; it is a growing community
-                    where creativity, spirituality, and self-awareness come
-                    together in the most beautiful way.
+                    local artisans — individuals who pour their hearts into each
+                    creation. Our collaboration goes beyond artistry; we share
+                    the beauty of energies and auras, inviting them to explore
+                    these concepts as they infuse their work with meaning.
+                    Aakaura is more than just a brand; it&apos;s a growing
+                    community where creativity, spirituality, and self-awareness
+                    come together in the most beautiful way.
                   </p>
                 </motion.div>
               </div>
