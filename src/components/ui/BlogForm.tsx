@@ -12,6 +12,12 @@ import { MdTitle } from "react-icons/md";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
 import Cookies from "js-cookie";
+import {
+  commands,
+  ICommand,
+  TextAreaTextApi,
+  TextState,
+} from "@uiw/react-md-editor";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
@@ -252,6 +258,67 @@ export default function BlogForm({
     }
   };
 
+  const imageUpload: ICommand = {
+    name: "image",
+    keyCommand: "image",
+    buttonProps: { "aria-label": "Upload image" },
+    icon: (
+      <svg width="12" height="12" viewBox="0 0 20 20">
+        <path
+          fill="currentColor"
+          d="M15 9c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm4-7H1c-.55 0-1 .45-1 1v14c0 .55.45 1 1 1h18c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 13l-6-5-2 2-4-5-4 8V4h16v11z"
+        />
+      </svg>
+    ),
+    execute: (state: TextState, api: TextAreaTextApi): void => {
+      const toastId = toast.loading("Uploading image...");
+      const fileInput: HTMLInputElement = document.createElement("input");
+      fileInput.type = "file";
+      fileInput.accept = "image/*";
+
+      fileInput.onchange = async (e: Event): Promise<void> => {
+        const target = e.target as HTMLInputElement;
+        const file: File | null = target.files?.[0] || null;
+
+        if (file) {
+          // Create a FormData object to send the file to your server
+          const formData: FormData = new FormData();
+          formData.append("image", file);
+
+          try {
+            // Replace this with your actual image upload API endpoint
+            const response: Response = await fetch("/api/admin/upload", {
+              method: "POST",
+              body: formData,
+              headers: {
+                Authorization: `Bearer ${Cookies.get("admin_token")}`,
+              },
+            });
+
+            const data = await response.json();
+
+            // Insert markdown image syntax at cursor position
+            const imageUrl: string = data.data.imageUrl; // Adjust based on your API response
+            const imageMarkdown: string = `![${file.name}](${imageUrl})`;
+
+            api.replaceSelection(imageMarkdown);
+            toast.success("Image uploaded successfully", { id: toastId });
+          } catch (error) {
+            console.error("Error uploading image:", error);
+            alert("Failed to upload image");
+          }
+        }
+      };
+
+      fileInput.click();
+    },
+  };
+
+  const customCommands = [
+    imageUpload, // Add directly as first command
+    ...commands.getCommands().filter((cmd) => cmd.name !== "image"), // Filter out default image command if it exists
+  ];
+
   return (
     <div className="min-h-screen bg-secondaryBeige p-2 md:p-8">
       <div className="max-w-5xl mx-auto w-full px-2 sm:px-4">
@@ -376,6 +443,7 @@ export default function BlogForm({
                   preview="edit"
                   height={300}
                   className="border border-primaryBrown/20 rounded-lg overflow-hidden shadow-sm"
+                  commands={customCommands}
                 />
               </div>
             </div>
