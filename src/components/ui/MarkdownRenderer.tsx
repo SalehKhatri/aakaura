@@ -70,6 +70,12 @@ export default function MarkdownRenderer({ content }: { content: string }) {
           />
         ),
         hr: () => <hr className="my-8 border-primaryBrown/20" />,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        img: ({ node, ...props }) => (
+          <span className="flex justify-center my-6">
+            <img className="max-w-full h-auto" {...props} />
+          </span>
+        ),
       }}
     >
       {content}
