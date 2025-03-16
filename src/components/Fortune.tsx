@@ -77,7 +77,10 @@ const fortuneCards: FortuneCardType[] = [
     title: "The Only Way Out Is In",
     image: "/images/fortune/way.png",
     content1:
-      "Everything you seek — happiness, peace, fulfillment — already exists within you. The connection with your soul is the most powerful constant in your life. Once you turn inward and embrace your inner energy, the external world aligns with your newfound awareness. The universe moves through you, and the path to true transformation begins when you understand that the key to every change lies within your own heart and mind.",
+      "You have to be so protected, so powerful, so grounded in your own self that you never feel the need to shut yourself off. Because you know: I've got me. I have got myself. This is all the reality that could ever sustain itself — and it already exists within me.",
+    content2:
+      "So maybe the problem was never with being vulnerable. Maybe the problem was always with the fear of being hurt. And well, buddy — that's an inner work. Just like 100% of the works. It's an inner work, and it starts and ends with you.",
+    blogLink: "https://aakaura.in/blogs/910e1575-a6fa-4f9f-a08f-44102b22a1c1",
   },
 ];
 
