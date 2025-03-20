@@ -110,7 +110,7 @@ export default function SplashScreen() {
                     letterSpacing: "0.5px", // Improve spacing
                   }}
                 >
-                  <span className="font-[inherit]">आकर</span>{" "}
+                  <span className="font-[inherit]">आकार</span>{" "}
                   <span className="font-[inherit]">to your aura:</span>
                 </motion.p>
               </div>
