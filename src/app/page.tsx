@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 export const metadata = generateSEO({
   title: "Aakaura - Spiritual Growth & Wellness",
   description:
-    "Aakaura is a sanctuary for spiritual seekers, offering handcrafted decor, healing crystals, chakra balancing, meditation guides, and holistic well-being resources.",
+    "Aakaura, spirituality, aura, wellness, energy healing, chakra balancing, meditation, mindfulness, positivity, manifestation, self-love, spiritual protection, cleansing rituals, artisans, handcrafted decor, bonsai trees, root connection, personal growth, spiritual journey, holistic healing, self-improvement, zen lifestyle, inner peace, divine energy, yoga, reiki therapy, crystal healing, law of attraction, spiritual awakening, higher consciousness, guided meditation, metaphysical store, esoteric wisdom, soul alignment",
 });
 
 const getFeaturedBlogs = async () => {
