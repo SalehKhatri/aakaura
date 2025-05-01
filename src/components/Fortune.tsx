@@ -120,12 +120,20 @@ const Fortune = () => {
             Trust the universe to lead the way.
           </motion.h2>
 
-          <h3
-            className={`${fonts.specialElite} text-primaryBrown text-base md:text-lg lg:text-[22px] lg:leading-loose italic`}
-          >
-            {`Tap on a card, follow your intuition, and explore a blog made JUST for you.. (maybe, maybe not) ;)
+           <div>
+            <h3
+              className={`${fonts.specialElite} text-primaryBrown text-base md:text-lg lg:text-[22px] lg:leading-loose italic`}
+            >
+              {`Tap on a card, follow your intuition, and explore a blog made JUST for you..)
 `}
-          </h3>
+            </h3>
+            <h4
+              className={`${fonts.specialElite} text-primaryBrown text-base md:text-lg lg:text-[22px] lg:leading-loose italic`}
+            >
+              If these speak to your soul, your aura already knows where it
+              belongs. Welcome to Aakaura.
+            </h4>
+          </div>
         </div>
         {/* Grid of Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-12 gap-8 w-full justify-items-center py-8">
