@@ -120,11 +120,11 @@ const Fortune = () => {
             Trust the universe to lead the way.
           </motion.h2>
 
-           <div>
+          <div>
             <h3
               className={`${fonts.specialElite} text-primaryBrown text-base md:text-lg lg:text-[22px] lg:leading-loose italic`}
             >
-              {`Tap on a card, follow your intuition, and explore a blog made JUST for you..)
+              {`Tap on a card, follow your intuition, and explore a blog made JUST for you.
 `}
             </h3>
             <h4
